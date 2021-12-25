@@ -1,8 +1,8 @@
 import { getSession } from 'next-auth/react';
-import { verifyPassword } from '../../../helpers/auth';
+import { verifyPassword, hashPassword } from '../../../helpers/auth';
 import { connectToDatabase } from '../../../helpers/db';
 
-function handler(req, res) {
+async function handler(req, res) {
   if (req.method !== 'PATCH') {
     return;
   }
